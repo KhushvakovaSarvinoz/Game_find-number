@@ -1,1 +1,64 @@
-This file has all group of functions.
+# This file has all group of functions.
+
+
+import random as r
+
+def find_number(x=10):
+    """ This app you should find number computer think"""
+    print(f"I think a number from 1 to {x}, can you find it:\n")
+    print('Please enter your guest number:')
+    number2 = r.randint(1,x)
+    steps= 0
+    while True:   
+        steps+=1
+        number=int(input("<<<"))
+        if number<number2:
+            print ("My guest number is  larger.Try again.")
+        elif number>number2:
+            print("My guest number is  smaller.Try again.")
+        else:
+            print(f"Congratulations, you find my think number after {steps} steps!")
+            break
+    return steps
+
+def find_numberpc(x=10):
+    """ This app computer should find number you think"""
+    print(f"I will found your guest number from 1 to {x}:")
+    low=1
+    up=x
+    steps= 0
+    while True:
+        steps+=1
+        if low!= up:
+            guest= r.randint(low,up)
+        else: 
+            guest=low
+        answer=input(f"You think : {guest}. If I found enter 't'"
+                     f" if your number is lower enter '-'"
+                     f" if your number upper enter '+' \n")
+        if answer == "-": 
+            up = guest -1
+            
+        elif answer == "+":
+            low= guest +1
+        
+        else:
+            break
+    print(f"I found your number after {steps} step.")
+    return steps
+    
+def play(x=10):
+        again=True
+        while again:
+            steps_user= find_number(x)
+            steps_pc= find_numberpc(x)
+            if steps_user>steps_pc:
+                print("I win")
+            elif steps_user<steps_pc:
+                    print("You win")
+            else:
+                    print("Our results are equal.")
+        
+            again = int(input("Do you want play again yes(1) no (0): \n"))
+            
+           
