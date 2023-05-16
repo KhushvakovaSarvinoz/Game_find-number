@@ -4,8 +4,8 @@
 import random as r
 
 def find_number(x=10):
-    """ This app you should find number computer think"""
-    print(f"I think a number from 1 to {x}, can you find it:\n")
+    """ This level you should find number computer think"""
+    print(f"I think a number from 1 to {x}, could you find it:\n")
     print('Please enter your guest number:')
     number2 = r.randint(1,x)
     steps= 0
